@@ -24,7 +24,7 @@ public class SequenceInputStreamDemo {
      * @throws IOException 
      */
     public static void main(String[] args) throws IOException {
-       ByteToCharacter2();
+       byteToCharacter1();
 //       System.out.println(File.separator);//\
 //       System.out.println(File.pathSeparator);//;
 //       System.out.println("默认编码："+System.getProperty("file.encoding"));
@@ -33,7 +33,7 @@ public class SequenceInputStreamDemo {
      * 将字节输出流转化为字符输出流
      * @throws IOException 
      */
-    protected static void ByteToCharacter1() throws IOException{
+    protected static void byteToCharacter1() throws IOException{
         String fileName = "../spring-repository/IO/hello.txt";
         File file=new File(fileName);
         Writer out=new OutputStreamWriter(new FileOutputStream(file));
@@ -46,7 +46,7 @@ public class SequenceInputStreamDemo {
      * 将字节输入流转为字符输入流
      * @throws IOException 
      */
-    protected static void ByteToCharacter2() throws IOException{
+    protected static void byteToCharacter2() throws IOException{
         String fileName = "../spring-repository/IO/hello.txt";
         File file = new File(fileName);
         Reader reader = new InputStreamReader(new FileInputStream(file));
