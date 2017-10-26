@@ -17,7 +17,7 @@ import java.io.Writer;
  * @author first
  *
  */
-public class SequenceInputStreamDemo {
+public class ByteToCharacterDemo {
 
     /**
      * @param args
