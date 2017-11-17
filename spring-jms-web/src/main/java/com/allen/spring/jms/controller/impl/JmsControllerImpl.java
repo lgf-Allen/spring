@@ -28,11 +28,12 @@ public class JmsControllerImpl {
     private JmsService jmsService;
     
     @RequestMapping(path="/login",method=RequestMethod.GET)
-    public Response hello() throws JMSException{
+    public String hello() throws JMSException{
         Response r = new Response();
         r.setName("Lisi");
+        r.setMessage("jms测试");
         r.setDate(new Date(System.currentTimeMillis()));
-        jmsService.sendAndReceive(r.toString());
-        return r;
+        String response = jmsService.sendAndReceive(r.toString());
+        return response;
     }
 }
