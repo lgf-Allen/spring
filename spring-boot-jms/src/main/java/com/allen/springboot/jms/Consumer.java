@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.allen.jms.springboot.jms;
+package com.allen.springboot.jms;
 
 import javax.jms.JMSException;
 import javax.jms.Message;

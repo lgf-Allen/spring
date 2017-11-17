@@ -1,4 +1,4 @@
-package com.allen.jms.springboot;
+package com.allen.springboot;
 
 import org.apache.activemq.ActiveMQConnectionFactory;
 import org.springframework.boot.SpringApplication;
