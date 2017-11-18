@@ -42,7 +42,7 @@ ALTER QMGR CHLAUTH(DISABLED)
 define qlocal(TQ1) usage(xmitq) defpsist(yes) maxdepth(10000) maxmsgl(1048576) replace
 
 --define sender channel
-define channel(QM1.QM2) chltype(sdr) conname('192.168.0.1(1415)') xmitq(TQ1) trptype(tcp) replace
+define channel(QM1.QM2) chltype(sdr) conname('192.168.0.2(1415)') xmitq(TQ1) trptype(tcp) replace
 
 --define receive channel
 define channel(QM2.QM1) chltype(rcvr) trptype(tcp) replace
@@ -98,7 +98,7 @@ define qremote(QM2.QM1_RQST.02) rname(QM2.QM1_RSP.01) rqmname(QM1) xmitq(TQ2) de
 define qlocal(QM1.QM2_RSP.02) replace
 
 --start listener
-./runmqlsr -m QM2 -t TCP -p 1415 -i 192.168.0.1
+./runmqlsr -m QM2 -t TCP -p 1415 -i 192.168.0.2
 
 --start channel
 ./runmqchl –m QM2 –c QM2.QM1 
@@ -133,7 +133,7 @@ liberty server.xml config
 
 	<!-- listener mq -->
 	<jmsConnectionFactory id="listenerConnectionFactory" jndiName="jms/listenerConnectionFactory">
-        <properties.wmqJms channel="SEVR_CONN_CHLL" failIfQuiesce="true" hostName="192.168.0.1" port="1415" providerVersion="7" queueManager="QM2" />
+        <properties.wmqJms channel="SEVR_CONN_CHLL" failIfQuiesce="true" hostName="192.168.0.2" port="1415" providerVersion="7" queueManager="QM2" />
         <connectionManager/>
     </jmsConnectionFactory>
 
