@@ -35,16 +35,18 @@
     <jee:jndi-lookup id="jms/replyQueue" jndi-name="jndi/replyQueue"></jee:jndi-lookup>
     <!-- ******************************************************************************************************* -->
     <!-- Active MQ测试request-response模式时，需要spring-jms-web和spring-boot-jms都运行起来。 -->
-    <!-- 测试url:http://IP:Port/spring-jms-web/hello/login,method=GET-->
+    <!-- 测试url:http://IP:Port/spring-jms-web/hello/login,method=GET -->
     <!-- JNDI对应Active MQ在tomcat中的配置,JNDI配置需要tomcat的lib下加入activemq-client-5.14.5.jar;如有必要还需加上slf4j-api-1.7.25.jar和javaee-api-7.0.jar -->
-    <!-- <Resource auth="Container" brokerName="localhost" brokerURL="tcp://localhost:61616" description="JMS Connection Factory" -->
-    <!-- factory="org.apache.activemq.jndi.JNDIReferenceFactory" name="jndi/connectionFactory" type="org.apache.activemq.ActiveMQConnectionFactory" useEmbeddedBroker="false" /> -->
+    <!-- <Resource auth="Container" brokerName="localhost" brokerURL="tcp://localhost:61616" description="JMS Connection 
+        Factory" -->
+    <!-- factory="org.apache.activemq.jndi.JNDIReferenceFactory" name="jndi/connectionFactory" type="org.apache.activemq.ActiveMQConnectionFactory" 
+        useEmbeddedBroker="false" /> -->
     <!-- <Resource auth="Container" factory="org.apache.activemq.jndi.JNDIReferenceFactory" name="jndi/requestQueue" -->
     <!-- physicalName="requestQueue" type="org.apache.activemq.command.ActiveMQQueue" /> -->
     <!-- <Resource auth="Container" factory="org.apache.activemq.jndi.JNDIReferenceFactory" name="jndi/replyQueue" -->
     <!-- physicalName="replyQueue" type="org.apache.activemq.command.ActiveMQQueue" /> -->
     <!-- ******************************************************************************************************* -->
-    
+
     <!-- ******************************************************************************************************* -->
     <!--Listener and Container 配置在spring-boot-jms项目中 -->
     <!-- 消息监听器 -->
@@ -56,11 +58,16 @@
     <!-- <property name="messageListener" ref="messageListener" /> -->
     <!-- </bean> -->
     <!-- ********************************************************************************************************* -->
-    
+
     <!-- ******************************************************************************************************* -->
     <!-- JNDI对应IBM MQ在tomcat中的配置 -->
-    
-    
+    <!-- <Resource name="jndi/connectionFactory" auth="Container" type="com.ibm.mq.jms.MQConnectionFactory" factory="com.ibm.mq.jms.MQConnectionFactoryFactory" 
+        description="JMS Queue Connection Factory for sending messages" HOST="localhost" PORT="1414" CHAN="RC.01" TRAN="1" CCSID="1381" 
+        QMGR="HUBMQLOCAL" /> -->
+    <!-- <Resource name="jndi/requestQueue" auth="Container" type="com.ibm.mq.jms.MQQueue" factory="com.ibm.mq.jms.MQQueueFactory" 
+        description="JMS Queue for sending messages from Dialog" QU="Q1" CCSID="1381"/> -->
+    <!-- <Resource name="jndi/replyQueue" auth="Container" type="com.ibm.mq.jms.MQQueue" factory="com.ibm.mq.jms.MQQueueFactory" 
+        description="JMS Queue for receiving messages from Dialog" QU="A" CCSID="1381"/> -->
     <!-- ******************************************************************************************************* -->
 
 </beans>
