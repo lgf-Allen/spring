@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$.ajax({
+			url : "hello/findAll",
+			type : "get",
+			contentType : "application/json;charset=utf-8",
+			dataType : "json",
+			success : function(data) {
+				//var list = data;
+				var table = $("<table border=\"1\">");
+				table.appendTo("#createTable");
+				$.each(data, function(index, value) {
+					var tr = $("<tr></tr>");
+					tr.appendTo(table);
+					var td1 = $("<td>" + value.name + "</td>");
+					td1.appendTo(tr);
+					var td2 = $("<td>" + value.gender + "</td>");
+					td2.appendTo(tr);
+				});
+			}
+		});
+	});
+</script>
+</head>
+<body>
+				<!-- create table  -->
+				<div id="createTable"></div>
+
+</body>
+</html>
