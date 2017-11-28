@@ -4,7 +4,10 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/ajaxfileupload.js"></script>
 <script type="text/javascript">
+
+	/*页面一开始就加载 */
 	$(function() {
 		$.ajax({
 			url : "hello/findAll",
@@ -25,12 +28,40 @@
 				});
 			}
 		});
+		//图片预览
+		var path,clip = $("#image"),FileReader = window.FileReader;  
+        $("#file").change(function() {  
+        	
+            if (FileReader) {//chrome浏览器处理  
+                var reader = new FileReader(),  
+                    file = this.files[0];  
+                reader.onload = function(e) {
+                	alert(e.target.result);
+                    clip.attr("src", e.target.result);//这里是把图片转成64位数据存入<img>中的src里  
+                };  
+                reader.readAsDataURL(file);  
+            }  
+            else {//其他浏览器处理，火狐在这里就不写出来了，网上资料很多  
+                path = $(this).val();  
+                if (/"\w\W"/.test(path)) {  
+                    path = path.slice(1,-1);  
+                }  
+                clip.attr("src",path);  
+            }  
+        });  
+		
 	});
+     
 </script>
 </head>
 <body>
-				<!-- create table  -->
-				<div id="createTable"></div>
-
+	<!-- create table  -->
+	<div id="createTable"></div>
+	<div>
+	<img id="image" src="image/default.jpg" width="140px" height="200px">
+	 <br> 
+	 <input id="file" type="file" accept="image/*" allowexts="jpg,gif,png,jpeg"> <br>
+	<button id="uploadImg">上传图片</button>
+	</div>
 </body>
 </html>
