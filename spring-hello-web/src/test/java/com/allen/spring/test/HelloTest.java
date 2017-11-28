@@ -3,30 +3,44 @@
  */
 package com.allen.spring.test;
 
+import java.sql.SQLException;
+
+import javax.sql.DataSource;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.data.domain.Page;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.allen.spring.config.HelloConfig;
-import com.allen.spring.controller.Female;
+import com.allen.spring.persist.bean.Employee;
+import com.allen.spring.service.EmployeeService;
 
 /**
  * @author first
  *
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = HelloConfig.class)
+@ContextConfiguration(locations={"classpath:spring/application-config.xml","classpath:spring/mvc-config.xml"})
 public class HelloTest {
-
-    ApplicationContext context;
+    
+    @Autowired
+    @Qualifier("dataSource")
+    private DataSource dataSource;
     @Test
-    public void getBean(){
-        
-        context = new AnnotationConfigApplicationContext();
-        Female female = context.getBean(Female.class);
-        System.out.println(female.getName());
+    public void testDataSource() throws SQLException{
+
+        System.out.println(dataSource.getConnection());
     }
+    
+    @Autowired
+    private EmployeeService employeeService;
+    @Test
+    public void testFindAll(){
+        Page<Employee> pageable = employeeService.getPage(1, 2);
+        System.out.println(pageable);
+    }
+
 }

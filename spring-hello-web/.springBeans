@@ -9,6 +9,9 @@
 	<configs>
 		<config>src/main/resources/spring/application-config.xml</config>
 		<config>src/main/resources/spring/mvc-config.xml</config>
+		<config>src/main/resources/spring/config/dataSource.xml</config>
+		<config>src/main/resources/spring/config/jpa.xml</config>
+		<config>src/main/resources/spring/config/tx.xml</config>
 	</configs>
 	<autoconfigs>
 	</autoconfigs>

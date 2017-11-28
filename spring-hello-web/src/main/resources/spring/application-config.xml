@@ -8,8 +8,15 @@
     <!-- Uncomment and add your base-package here:
          <context:component-scan
             base-package="org.springframework.samples.service"/>  -->
-    <context:component-scan base-package="com.alllen.spring.ibm.mq">
+    <context:component-scan base-package="com.allen.spring">
         <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
         <context:exclude-filter type="annotation" expression="org.springframework.web.bind.annotation.ControllerAdvice"/>
     </context:component-scan>
+    
+    <!-- dataSource -->
+    <import resource="config/dataSource.xml"/>
+    <!-- tx -->
+    <import resource="config/tx.xml"/>
+    <!-- jpa -->
+    <import resource="config/jpa.xml"/>
 </beans>
