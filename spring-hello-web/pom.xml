@@ -17,8 +17,9 @@
         <spring-framework.version>4.3.8.RELEASE</spring-framework.version>
 
         <!-- Hibernate / JPA -->
-        <hibernate.version>4.2.21.Final</hibernate.version>
+        <hibernate.version>5.1.0.Final</hibernate.version>
         <spring.data.version>1.10.1.RELEASE</spring.data.version>
+        <ehcache.version>2.10.1</ehcache.version>
         <!-- Logging -->
         <logback.version>1.0.13</logback.version>
         <slf4j.version>1.7.5</slf4j.version>
@@ -121,10 +122,25 @@
         <!-- Hibernate -->
         <dependency>
             <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-entitymanager</artifactId>
+            <artifactId>hibernate-core</artifactId>
             <version>${hibernate.version}</version>
         </dependency>
-
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-entityManager</artifactId>
+            <version>${hibernate.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-ehcache</artifactId>
+            <version>${hibernate.version}</version>
+        </dependency>
+        <!-- Second level cache -->
+        <dependency>
+            <groupId>net.sf.ehcache</groupId>
+            <artifactId>ehcache</artifactId>
+            <version>${ehcache.version}</version>
+        </dependency>
 
         <!-- Test Artifacts -->
         <dependency>
@@ -141,7 +157,7 @@
         </dependency>
         <dependency>
             <groupId>ojdbc6</groupId>
-            <artifactId>ojdbc6</artifactId>、
+            <artifactId>ojdbc6</artifactId>
             <version>11.2.0.4</version>
             <scope>test</scope>
         </dependency>

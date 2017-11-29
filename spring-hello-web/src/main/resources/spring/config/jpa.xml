@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:jpa="http://www.springframework.org/schema/data/jpa"
+    xmlns:jpa="http://www.springframework.org/schema/data/jpa" xmlns:util="http://www.springframework.org/schema/util"
     xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.3.xsd
 		http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa-1.8.xsd">
 
     <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
@@ -10,7 +11,21 @@
         <property name="packagesToScan" value="com.allen.spring.persist"></property>
         <property name="jpaProperties" ref="jpaProperties"></property>
         <property name="persistenceProviderClass" value="org.hibernate.ejb.HibernatePersistence"></property>
+        <!-- 缓存模式 -->
+        <property name="sharedCacheMode" value="ENABLE_SELECTIVE"></property>
     </bean>
+    <util:properties id="jpaProperties">
+        <prop key="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</prop>
+        <prop key="javax.persistence.validation.mode">none</prop>
+        <prop key="hibernate.show_sql">true</prop>
+        <prop key="hibernate.format_sql">true</prop>
+        <!-- validate | update | create | create-drop | none -->
+        <prop key="hibernate.hbm2ddl.auto">update</prop>
+        <!-- Second level cache -->
+        <prop key="hibernate.cache.use_second_level_cache">true</prop>
+        <prop key="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.EhCacheRegionFactory</prop>
+        <prop key="hibernate.cache.use_query_cache">true</prop>
+    </util:properties>
     <!--  -->
     <jpa:repositories base-package="com.allen.spring.persist" transaction-manager-ref="transactionManager"
         entity-manager-factory-ref="entityManagerFactory" repository-impl-postfix="Impl"></jpa:repositories>

@@ -27,7 +27,8 @@
             <tx:method name="*" propagation="REQUIRED"/>
         </tx:attributes>
     </tx:advice>
-    
+    <!-- 配置支持基于注解的事务 -->
+    <tx:annotation-driven transaction-manager="transactionManager"/>
     <aop:config>
         <!-- 事务边界配置 -->
         <aop:advisor pointcut="execution(* com.chinasofti.vtc.bussiness..*Service.*(..))" advice-ref="txAdvice" />
