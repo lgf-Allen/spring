@@ -13,6 +13,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <servlet.version>2.5</servlet.version>
+        <jstl.version>1.2</jstl.version>
         <!-- Spring -->
         <spring-framework.version>4.3.8.RELEASE</spring-framework.version>
 
@@ -166,5 +167,12 @@
             <artifactId>servlet-api</artifactId>
             <version>${servlet.version}</version>
         </dependency>
+        <!-- jstl -->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jstl</artifactId>
+            <version>${jstl.version}</version>
+        </dependency>
+
     </dependencies>
 </project>

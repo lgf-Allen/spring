@@ -3,6 +3,7 @@
  */
 package com.allen.spring.persist.bean;
 
+import javax.persistence.Cacheable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -14,6 +15,7 @@ import javax.persistence.Table;
  * @author first
  *
  */
+@Cacheable
 @Entity
 @Table(name="department_tab")
 @SequenceGenerator(name="DS",sequenceName="Department_seq",allocationSize=1)

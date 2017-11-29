@@ -31,6 +31,6 @@
     <tx:annotation-driven transaction-manager="transactionManager"/>
     <aop:config>
         <!-- 事务边界配置 -->
-        <aop:advisor pointcut="execution(* com.chinasofti.vtc.bussiness..*Service.*(..))" advice-ref="txAdvice" />
+        <aop:advisor pointcut="execution(* com.allen.spring.servcie..*Service.*(..))" advice-ref="txAdvice" />
     </aop:config>
 </beans>

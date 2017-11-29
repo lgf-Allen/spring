@@ -25,6 +25,8 @@
         <prop key="hibernate.cache.use_second_level_cache">true</prop>
         <prop key="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.EhCacheRegionFactory</prop>
         <prop key="hibernate.cache.use_query_cache">true</prop>
+        <!-- 二级缓存 ehcache的配置文件位置 -->  
+<prop key="hibernate.cache.provider_configuration_file_resource_path">spring/config/ehcache.xml</prop>
     </util:properties>
     <!--  -->
     <jpa:repositories base-package="com.allen.spring.persist" transaction-manager-ref="transactionManager"

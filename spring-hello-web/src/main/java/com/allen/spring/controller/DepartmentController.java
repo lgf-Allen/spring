@@ -9,8 +9,7 @@ import java.util.Map;
  * @author first
  *
  */
-public interface EmployeeController {
+public interface DepartmentController {
 
-
-    String list(String pageNo, Map<String, Object> map);
+    public String input(Map<String ,Object> map);
 }
