@@ -17,6 +17,8 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 /**
  * @author first
  *
@@ -32,6 +34,7 @@ public class Employee {
     private String lastName;
     private String email;
     @Temporal(TemporalType.DATE)
+    @DateTimeFormat(pattern="yyyy-MM-dd")
     private Date birth;
     @Temporal(TemporalType.TIMESTAMP)
     private Date createTime;

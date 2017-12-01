@@ -11,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.allen.spring.controller.EmployeeController;
 import com.allen.spring.persist.bean.Employee;
@@ -21,7 +22,6 @@ import com.allen.spring.service.EmployeeService;
  *
  */
 @Controller
-@RequestMapping("employee")
 public class EmployeeControllerImpl implements EmployeeController {
 
     @Autowired
@@ -44,6 +44,21 @@ public class EmployeeControllerImpl implements EmployeeController {
         Page<Employee> page = employeeService.getPage(pageNo1, pageSize);
         map.put("page", page);
         return "emp/list";
+    }
+
+    @ResponseBody
+    @RequestMapping(path="/ajaxValidateLastName",method=RequestMethod.POST)
+    @Override
+    public String validateLastName(@RequestParam(value="lastName",required=true)String lastName) {
+        Employee employee = employeeService.findByLastName(lastName);
+        return employee == null? "0": "1";
+    }
+
+    @RequestMapping(path="emp",method=RequestMethod.POST)
+    @Override
+    public String save(Employee employee) {
+        employeeService.save(employee);
+        return "redirect:list";
     }
 
 }
