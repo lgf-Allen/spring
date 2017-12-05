@@ -44,6 +44,12 @@ public class EmployeeServiceImpl implements EmployeeService {
         employee.setCreateTime(new Date());
         employeeRepository.saveAndFlush(employee);
     }
+    
+    @Transactional
+    @Override
+    public Employee get(Integer id){
+        return employeeRepository.findOne(id);
+    }
 
     
 }

@@ -18,5 +18,7 @@ public interface EmployeeController {
     
     String validateLastName(String lastName);
     
-    public String save(Employee employee);  
+    public String save(Employee employee);
+    
+    public String input(Integer id,Map<String ,Object> map);
 }

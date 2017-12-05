@@ -33,10 +33,10 @@ public class Employee {
     private Integer id;
     private String lastName;
     private String email;
-    @Temporal(TemporalType.DATE)
+    
     @DateTimeFormat(pattern="yyyy-MM-dd")
     private Date birth;
-    @Temporal(TemporalType.TIMESTAMP)
+    
     private Date createTime;
     @JoinColumn(name="DEPARTMENT_ID ")
     @ManyToOne(fetch=FetchType.LAZY)
@@ -66,6 +66,7 @@ public class Employee {
         this.email = email;
     }
 
+    @Temporal(TemporalType.DATE)
     public Date getBirth() {
         return birth;
     }
@@ -73,7 +74,8 @@ public class Employee {
     public void setBirth(Date birth) {
         this.birth = birth;
     }
-
+    
+    @Temporal(TemporalType.TIMESTAMP)
     public Date getCreateTime() {
         return createTime;
     }

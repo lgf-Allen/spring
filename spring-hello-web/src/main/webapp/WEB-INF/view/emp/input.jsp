@@ -47,7 +47,7 @@
 		<c:set value="${pageContext.request.contextPath }/emp/${employee.id}" var="url"></c:set>
 	</c:if>
 	
-	<form:form action="${url }" method="POST" modelAttribute="employee">
+	<form:form action="${url}" method="POST" modelAttribute="employee">
 		
 		<c:if test="${employee.id != null }">
 			<input type="hidden" id="_oldLastName" value="${employee.lastName }"/>
@@ -59,7 +59,7 @@
 		<br>
 		Email: <form:input path="email"/>
 		<br>
-		Birth: <form:input path="birth"/>
+		Birth: <form:input path="birth"  />
 		<br>
 		Department: 
 		<form:select path="department.id" items="${departments }" 

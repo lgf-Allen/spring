@@ -30,4 +30,6 @@ public interface EmployeeService {
      * 保存新增的用户
      */
     public void save(Employee employee);
+    
+    public Employee get(Integer id);
 }
