@@ -22,7 +22,7 @@
         <spring.data.version>1.10.1.RELEASE</spring.data.version>
         <ehcache.version>2.10.1</ehcache.version>
         <!-- Logging -->
-        <logback.version>1.0.13</logback.version>
+        <logback.version>1.1.11</logback.version>
         <slf4j.version>1.7.5</slf4j.version>
 
         <!-- Test -->
