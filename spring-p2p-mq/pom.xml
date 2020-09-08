@@ -19,7 +19,7 @@
         <!-- Spring Integration -->
         <springframework.integration.version>4.3.12.RELEASE</springframework.integration.version>
         <!-- Hibernate / JPA -->
-        <hibernate.version>4.2.1.Final</hibernate.version>
+        <hibernate.version>5.3.18.Final</hibernate.version>
         
         <javaee-api.version>7.0</javaee-api.version>
 
