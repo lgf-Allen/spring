@@ -18,7 +18,7 @@
         <spring-framework.version>4.3.8.RELEASE</spring-framework.version>
 
         <!-- Hibernate / JPA -->
-        <hibernate.version>5.1.0.Final</hibernate.version>
+        <hibernate.version>5.3.18.Final</hibernate.version>
         <spring.data.version>1.10.1.RELEASE</spring.data.version>
         <ehcache.version>2.10.1</ehcache.version>
         <!-- Logging -->
