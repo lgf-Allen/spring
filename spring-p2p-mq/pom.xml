@@ -14,10 +14,10 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
         <!-- Spring -->
-        <spring-framework.version>4.3.12.RELEASE</spring-framework.version>
+        <spring-framework.version>4.3.14.RELEASE</spring-framework.version>
 
         <!-- Spring Integration -->
-        <springframework.integration.version>4.3.12.RELEASE</springframework.integration.version>
+        <springframework.integration.version>4.3.19.RELEASE</springframework.integration.version>
         <!-- Hibernate / JPA -->
         <hibernate.version>4.2.1.Final</hibernate.version>
         
