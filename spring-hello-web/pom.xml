@@ -28,7 +28,7 @@
         <!-- Test -->
         <junit.version>4.12</junit.version>
         <!-- Jackson -->
-        <jackson.version>2.7.3</jackson.version>
+        <jackson.version>2.12.6.1</jackson.version>
     </properties>
 
     <dependencies>
