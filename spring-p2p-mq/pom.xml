@@ -14,17 +14,17 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
         <!-- Spring -->
-        <spring-framework.version>4.3.12.RELEASE</spring-framework.version>
+        <spring-framework.version>4.3.29.RELEASE</spring-framework.version>
 
         <!-- Spring Integration -->
-        <springframework.integration.version>4.3.12.RELEASE</springframework.integration.version>
+        <springframework.integration.version>4.3.19.RELEASE</springframework.integration.version>
         <!-- Hibernate / JPA -->
-        <hibernate.version>4.2.1.Final</hibernate.version>
+        <hibernate.version>5.4.24.Final</hibernate.version>
         
         <javaee-api.version>7.0</javaee-api.version>
 
         <!-- Logging -->
-        <logback.version>1.0.13</logback.version>
+        <logback.version>1.2.7</logback.version>
         <slf4j.version>1.7.5</slf4j.version>
 
         <!-- Test -->
@@ -84,7 +84,7 @@
         <dependency>
             <groupId>commons-io</groupId>
             <artifactId>commons-io</artifactId>
-            <version>2.5</version>
+            <version>2.7</version>
         </dependency>
 
         <!-- Logging with SLF4J & LogBack -->
