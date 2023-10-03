@@ -17,9 +17,9 @@
         <spring-framework.version>4.3.12.RELEASE</spring-framework.version>
 
         <!-- Spring Integration -->
-        <springframework.integration.version>4.3.12.RELEASE</springframework.integration.version>
+        <springframework.integration.version>5.0.0.RELEASE</springframework.integration.version>
         <!-- Hibernate / JPA -->
-        <hibernate.version>4.2.1.Final</hibernate.version>
+        <hibernate.version>5.1.17.Final</hibernate.version>
         
         <javaee-api.version>7.0</javaee-api.version>
 
@@ -116,7 +116,7 @@
         <dependency>
             <groupId>org.apache.activemq</groupId>
             <artifactId>activemq-pool</artifactId>
-            <version>5.7.0</version>
+            <version>5.8.0</version>
         </dependency>
         <!-- Spring jms -->
         <dependency>
